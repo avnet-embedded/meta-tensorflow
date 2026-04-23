@@ -16,9 +16,6 @@ $ . <ts-project>/oe-core/oe-init-build-env <build>
 
 # Build qemux86-64 which runqemu supports kvm.
 $ echo 'MACHINE = "qemux86-64"' >> conf/local.conf
-$ echo 'DISTRO_FEATURES:append = " tensorflow"' >> conf/local.conf
-$ echo 'DISTRO_FEATURES_NATIVE:append = " tensorflow"' >> conf/local.conf
-$ echo 'DISTRO_FEATURES_NATIVESDK:append = " tensorflow"' >> conf/local.conf
 
 $ echo 'IMAGE_INSTALL:append = " tensorflow"' >> conf/local.conf
 
