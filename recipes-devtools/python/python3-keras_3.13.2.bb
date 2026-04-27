@@ -25,9 +25,6 @@ DEPENDS += " \
     python3-h5py \
     python3-mldtypes-native \
     python3-packaging \
-"
-
-DEPENDS = " \
     python3-pybind11-native \
 "
 
