@@ -1,0 +1,28 @@
+From: Daniel Drake <ddrake@baylibre.com>
+Subject: [PATCH] xla: update sha256 of LLVM archive
+
+Bazel can no longer fetch llvm-raw. The mirror.tensorflow.org copy of the
+archive returns 404, and the archive GitHub now generates for the same LLVM
+commit has a different checksum than the one pinned here.
+
+Pin the checksum of the archive GitHub currently serves. The LLVM commit is
+unchanged.
+
+Upstream-Status: Inappropriate [workaround for a regenerated GitHub archive; upstream master pins a newer LLVM commit]
+Signed-off-by: Daniel Drake <ddrake@baylibre.com>
+---
+ third_party/xla/third_party/llvm/workspace.bzl | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/third_party/xla/third_party/llvm/workspace.bzl b/third_party/xla/third_party/llvm/workspace.bzl
+--- a/third_party/xla/third_party/llvm/workspace.bzl
++++ b/third_party/xla/third_party/llvm/workspace.bzl
+@@ -5,7 +5,7 @@
+ def repo(name):
+     """Imports LLVM."""
+     LLVM_COMMIT = "909041e4802c4b9a2223ca04099f35bf1dbbd460"
+-    LLVM_SHA256 = "3f986184ee126677dbd77edb16d6b82c057ec869fefd7a9871979941e52e837a"
++    LLVM_SHA256 = "00b1077e029fa57e6f2d9ac24936a49acf23ebc051b04f487131116258be6248"
+ 
+     tf_http_archive(
+         name = name,
